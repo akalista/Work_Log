@@ -22,6 +22,13 @@ def display(list_of_lists, header_list):
     return list_of_lists
 
 
+def strip(delete_list):
+    string0, string1, string2, string3 = delete_list[0], delete_list[1], delete_list[2], delete_list[3]
+    string0, string1, string2, string3 = string0[14:], string1[11:], string2[12:], string3[18:]
+    delete_list2 = [string0, string1, string2, string3]
+    return delete_list2
+
+
 def iteration_menu(list_object):
     list_length, running = len(list_object), True
     headers = ['Date of Task: ', 'Task Name: ', 'Time Spent: ', 'Additional Notes: ']
@@ -55,9 +62,14 @@ def iteration_menu(list_object):
                 run1 = False
                 running = False
                 main_menu()
-            # NEED WORK HERE
             elif user_in.upper() == "D":
-                pass
+                delete_item = strip(list_object[index - 1])
+                entry.delete(delete_item)
+                print("Item has been deleted!")
+                main_menu()
+                running = False
+                break
+            # NEED WORK HERE
             elif user_in.upper() == "E":
                 pass
 

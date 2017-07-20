@@ -18,9 +18,9 @@ class Entry:
         self.my_csv.writer(date, name, time, notes)
         input("This entry has been added. Press enter to return to the main menu!")
 
-    # NEEDS WORK HERE
-    def delete(self):
-        pass
+    # Delete an Entry
+    def delete(self, to_delete):
+        self.my_csv.delete_entry(to_delete)
 
     # Used for appending whole row while looking in entire row
     def list_display(self, look):

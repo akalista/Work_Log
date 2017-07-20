@@ -66,5 +66,3 @@ class Error:
                 break
         return string
 
-
-
