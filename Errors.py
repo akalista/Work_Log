@@ -6,6 +6,7 @@ class Error:
     def __init__(self):
         pass
 
+    # Error thrown when user input not in range
     @staticmethod
     def error(x, y):
         while True:
@@ -18,6 +19,7 @@ class Error:
                 print("That's an invalid input! Select a number between {} and {}!".format(x, y-1))
         return user_input
 
+    # Error thrown when time object in incorrect format
     @staticmethod
     def time_error():
         while True:
@@ -29,6 +31,7 @@ class Error:
                 print("Incorrect data format!\n")
         return date
 
+    # Error thrown when user input not a valid integer
     @staticmethod
     def time_spent_error():
         while True:
@@ -39,6 +42,7 @@ class Error:
                 print("Provide a time rounded in minutes!")
         return time
 
+    # Error thrown when user input is empty
     @staticmethod
     def empty_task_error():
         while True:
@@ -50,6 +54,7 @@ class Error:
                 break
         return name
 
+    # Error thrown when user string is empty (Just different prints here vs empty_task_error)
     @staticmethod
     def empty_string_error():
         while True:
@@ -60,5 +65,6 @@ class Error:
             else:
                 break
         return string
+
 
 

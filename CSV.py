@@ -13,14 +13,14 @@ class CSV:
             writer.writerow({'Date of Task': date, 'Task Name': name, 'Time Spent': time, 'Additional Notes': notes})
             csvfile.close()
 
-    #  Appends whole row based on pattern
+    #  Appends whole row based on date pattern
     @staticmethod
     def reader(pattern):
         output = []
         with open('log.csv', 'r') as csv_file:
             reader = csv.reader(csv_file, delimiter=",")
             for row in reader:
-                if str(pattern) in row:
+                if str(pattern) in row[0]:
                     output.append(row)
         return output
 
@@ -61,3 +61,16 @@ class CSV:
                     output.append(row)
         return output
 
+    #  Appends whole row based on time spent pattern
+    @staticmethod
+    def reader4(pattern):
+        output = []
+        with open('log.csv', 'r') as csv_file:
+            reader = csv.reader(csv_file, delimiter=",")
+            for row in reader:
+                if str(pattern) in row[2]:
+                    output.append(row)
+        return output
+
+    def rinse_repeat(self):
+        pass

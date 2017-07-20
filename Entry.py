@@ -18,12 +18,14 @@ class Entry:
         self.my_csv.writer(date, name, time, notes)
         input("This entry has been added. Press enter to return to the main menu!")
 
+    # NEEDS WORK HERE
     def delete(self):
         pass
 
     # Used for appending whole row while looking in entire row
     def list_display(self, look):
         new_list = [x for x in self.my_csv.reader(look)]
+        # new_list[0] = "Date of Task: " + str(new_list[0])
         return new_list
 
     # Used for appending whole row while looking at Task Name and Additional Notes
@@ -31,8 +33,14 @@ class Entry:
         new_list = [x for x in self.my_csv.reader2(look)]
         return new_list
 
+    # Used for appending whole row while looking at Task Name and Additional Notes with REGEX
     def list_display3(self, look):
         new_list = [x for x in self.my_csv.reader3(look)]
+        return new_list
+
+    # Used for appending whole row while looking at Time Spent
+    def list_display4(self, look):
+        new_list = [x for x in self.my_csv.reader4(look)]
         return new_list
 
     # Used to display available dates
